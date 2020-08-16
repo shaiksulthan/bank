@@ -1,0 +1,60 @@
+<nav class="navbar navbar-default" style="background-color:#f3f3f4;width:100%">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn" style="background-color:#18a689">
+        <i class="glyphicon glyphicon-align-left"></i>
+        <span></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+
+          <img [src]="url" href="#" class="dropdown-toggle" data-toggle="dropdown" style="height:35px;width:35px;border-radius:25px;margin-top:10px">
+
+          <ul class="dropdown-menu">
+            <li>
+              <div class="navbar-content">
+                <div class="row">
+
+                  <div class="col-md-5">
+                    <span [ngStyle]="{'display':showPatientImg}">
+                      <img [src]="url" width="81" height="73" alt="Alternate Text" class="img-responsive">
+                    </span>
+                    <div hidden>
+                      <input id="patientImage" type="file" (change)="handlePatientImage($event.target.files)" accept="image/*" #patientImage hidden>
+                    </div>
+                    <p class="text-center small">
+                      <a href="#" *ngIf="showUserIcon" (click)="patientImage.click()">Change Photo</a>
+                    </p>
+                  </div>
+                  <div class="col-md-7">
+                    <span>Dayakar</span>
+                    <p class="text-muted small">
+                      Dayakardaya212@gmail.com
+                    </p>
+                    <div class="divider">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="navbar-footer">
+                <div class="navbar-footer-content">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a href="#" style="background-color:#293846;color:white" class="btn btn-default btn-sm">Change Password</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a (click)="Logout()" style="background-color:#293846;color:white" class="btn btn-default btn-sm pull-right">Log Out</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+

@@ -1,0 +1,100 @@
+
+
+<div class="col-sm-12">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="row">
+        <div class="col-sm-4">
+          <mat-form-field appearance="outline">
+            <mat-label>User</mat-label>
+            <input disabled matInput placeholder="" [(ngModel)]="Uesrnameone" name="one">
+          </mat-form-field>
+          
+        </div>
+        <div class="col-sm-4">
+          <mat-form-field appearance="outline" >
+            <mat-label>Amount</mat-label>
+            <input matInput placeholder="" [(ngModel)]="M_useroneamount" name="one">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+          <button type="button" style="margin-top:3%" class="btn btn-success" (click)="Sendusee(Uesrnameone)">Transfer</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="row">
+        <div class="col-sm-4">
+          <mat-form-field appearance="outline">
+            <mat-label>User</mat-label>
+            <input disabled matInput placeholder="" [(ngModel)]="Uesrnametwo" name="two">
+          </mat-form-field>
+          
+        </div>
+        <div class="col-sm-4">
+          <mat-form-field appearance="outline" >
+            <mat-label>Amount</mat-label>
+            <input matInput placeholder="" [(ngModel)]="M_usertwoamount" name="two">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+          <button type="button" style="margin-top:3%" class="btn btn-success" (click)="Sendusee(Uesrnametwo)">Transfer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-6">
+      <table class="table table-bordered table-striped">
+        <caption style="text-align:center"> 1st User Transactions</caption>
+        <caption style="color:blue" [(ngModel)]="M_Fullbalance" name="M_Fullbalancess">Total Balance : {{oneusersdatebalance}}</caption>
+        <thead>
+          <tr>
+            <th style="background-color:#F0F3F5;color:#8FA3B0;font-family:'Proxima Nova Semibold';font-size:14px;text-align:center;">Sno</th>
+            <th style="background-color:#F0F3F5;color:#8FA3B0;font-family:'Proxima Nova Semibold';font-size:14px;text-align:center;">User</th>
+            <th style="background-color:#F0F3F5;color:#8FA3B0;font-family:'Proxima Nova Semibold';font-size:14px;text-align:center;">Amount</th>
+            <th style="background-color:#F0F3F5;color:#8FA3B0;font-family:'Proxima Nova Semibold';font-size:14px;text-align:center;">Received Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of oneusersdate;let i = index">
+            <td style="color:blue;font-family:'Proxima Nova Semibold';font-size:13px;text-align:center">{{i+1}}</td>
+            <td style="color:blue;font-family:'Proxima Nova Semibold';font-size:13px;text-align:center">{{data.username}}</td>
+            <td style="color:blue;font-family:'Proxima Nova Semibold';font-size:13px;text-align:center">{{data.amount}}</td>
+            <td style="color:blue;font-family:'Proxima Nova Semibold';font-size:13px;text-align:center">{{data.Receiveddate | date: "dd-MMM-y"}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-6">
+      <table class="table table-bordered table-striped">
+        <caption style="text-align:center">2nd User Transactions</caption>
+        <caption style="color:blue">Total Balance : {{otwousersdatebalance}}</caption>
+        <thead>
+          <tr>
+            <th style="background-color:#F0F3F5;color:#8FA3B0;font-family:'Proxima Nova Semibold';font-size:14px;text-align:center;">Sno</th>
+            <th style="background-color:#F0F3F5;color:#8FA3B0;font-family:'Proxima Nova Semibold';font-size:14px;text-align:center;">User</th>
+            <th style="background-color:#F0F3F5;color:#8FA3B0;font-family:'Proxima Nova Semibold';font-size:14px;text-align:center;">Amount</th>
+            <th style="background-color:#F0F3F5;color:#8FA3B0;font-family:'Proxima Nova Semibold';font-size:14px;text-align:center;">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let datas of otwousersdate;let i = index">
+            <td style="color:blue;font-family:'Proxima Nova Semibold';font-size:13px;text-align:center">{{i+1}}</td>
+            <td style="color:blue;font-family:'Proxima Nova Semibold';font-size:13px;text-align:center">{{datas.username}}</td>
+            <td style="color:blue;font-family:'Proxima Nova Semibold';font-size:13px;text-align:center">{{datas.amount}}</td>
+            <td style="color:blue;font-family:'Proxima Nova Semibold';font-size:13px;text-align:center">{{datas.Receiveddate | date: "dd-MMM-y"}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<table>
+
+</table>
+

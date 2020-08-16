@@ -1,0 +1,25 @@
+<router-outlet></router-outlet>
+
+
+
+<div class="backdrop" [ngStyle]="{'display':backdrop}"></div>
+<div class="modal" role="dialog" [ngStyle]="{'display':modalCommon}">
+  <div class="modal-dialog modal-sm" [ngStyle]="{'width':modalCommonDialogWidth}">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" (click)="modalCommonClose()">&times;</button>
+        <h4 class="modal-title">{{modalCommonTitle}}</h4>
+      </div>
+      <div class="modal-body row" [innerHTML]="modalCommonBody"></div>
+      <div class="modal-footer">
+        <div *ngIf="showModalCommonYesNo">
+          <button type="button" class="btn btn-success" data-dismiss="modal" (click)="modalCommonYes()">Yes</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="modalCommonClose(); modalCommonNo()">No</button>
+        </div>
+        <div *ngIf="showModalCommonOk">
+          <button type="button" class="btn btn-success" data-dismiss="modal" (click)="modalCommonClose(); modalCommonOk()">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
